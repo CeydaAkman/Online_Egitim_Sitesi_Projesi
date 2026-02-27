@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Eğitim Sitesi - Admin Paneli</title>
+    <link rel="stylesheet" href="ADMİN_PANELİ.css">
+</head>
+
+<body>
+    <header>
+        <h1>Online Eğitim Sitesi</h1>
+    </header>
+
+    <main>
+        <section class="upload-form">
+            <h2>Eğitim Yükle</h2>
+            <form action="EĞİTİM_YÜKLE.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="course-title">Eğitim Başlığı:</label>
+                    <input type="text" id="course-title" name="course-title" placeholder="Eğitim başlığı giriniz" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-description">Eğitim Bilgisi:</label>
+                    <input type="text" id="course-description" name="course-description" placeholder="Eğitim açıklaması yazınız" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-image">Eğitim Görseli:</label>
+                    <input type="file" id="course-image" name="course-image" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-category">Eğitim Kategorisi:</label>
+                    <select id="course-category" name="course-category" required>
+                        <option value="">Kategori Seçin</option>
+                        <option value="Web Geliştirme">Web Geliştirme</option>
+                        <option value="Programlama Dilleri">Programlama Dilleri</option>
+                        <option value="Veri Bilimi">Veri Bilimi</option>
+                        <option value="Mobil Uygulama Geliştirme">Mobil Uygulama Geliştirme</option>
+                        <option value="Oyun Geliştirme">Oyun Geliştirme</option>
+                        <option value="Yapay Zeka">Yapay Zeka</option>
+                        <option value="Veritabanı Yönetimi">Veritabanı Yönetimi</option>
+                        <option value="Siber Güvenlik">Siber Güvenlik</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="instructor-name">Eğitmen Adı Soyadı:</label>
+                    <input type="text" id="instructor-name" name="instructor-name" placeholder="Eğitmen adı giriniz" required>
+                </div>
+                <div class="form-group">
+                    <label for="instructor-bio">Eğitmen Hakkında:</label>
+                    <input type="text" id="instructor-bio" name="instructor-bio" placeholder="Eğitmen biyografisini yazınız" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-price">Kurs Fiyat Bilgisi:</label>
+                    <input type="text" id="course-price" name="course-price" placeholder="Kurs fiyat bilgisini giriniz" required>
+                </div>
+                <h3>Kurs Bölümleri</h3>
+                <div id="course-sections">
+                    <div class="course-section">
+                        <label for="section-title-1">Bölüm Başlığı:</label>
+                        <input type="text" id="section-title-1" name="section-title[]" placeholder="Bölüm başlığı giriniz" required>
+
+                        <label for="section-video-1">Bölüm Videosu:</label>
+                        <input type="file" id="section-video-1" name="section-video[]" accept="video/*" required>
+                    </div>
+                </div>
+                <button type="button" onclick="addSection()">+ Bölüm Ekle</button>
+
+                <button type="submit">Eğitim Yükle</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Online Eğitim Sitesi. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script>
+        let sectionCount = 1;
+        function addSection() {
+            sectionCount++;
+            const sectionsContainer = document.getElementById('course-sections');
+            const newSection = document.createElement('div');
+            newSection.classList.add('course-section');
+
+            newSection.innerHTML = `
+                <label for="section-title-${sectionCount}">Bölüm Başlığı:</label>
+                <input type="text" id="section-title-${sectionCount}" name="section-title[]" placeholder="Bölüm başlığı girin..." required>
+
+                <label for="section-video-${sectionCount}">Bölüm Videosu:</label>
+                <input type="file" id="section-video-${sectionCount}" name="section-video[]" accept="video/*" required>
+            `;
+
+            sectionsContainer.appendChild(newSection);
+        }
+    </script>
+</body>
+
+</html>

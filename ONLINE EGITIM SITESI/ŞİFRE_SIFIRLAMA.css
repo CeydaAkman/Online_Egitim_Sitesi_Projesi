@@ -1,0 +1,92 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+header {
+    background: linear-gradient(120deg, #4caf50, #388e3c);
+    color: white;
+    text-align: center;
+    padding: 70px 20px;
+    clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+main {
+    width: 400px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 40px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 116px auto;
+}
+
+main h2 {
+    font-size: 2rem;
+    color: #4caf50;
+    margin-bottom: 15px;
+}
+
+main p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.veri_girişi {
+    margin-bottom: 20px;
+}
+
+.veri_girişi label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.veri_girişi input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.veri_girişi input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    padding: 12px;
+    transition: background-color 0.3s;
+}
+
+.veri_girişi input[type="submit"]:hover {
+    background-color: #388e3c;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    clip-path: ellipse(100% 100% at 50% 0%);
+}
+
+footer p {
+    margin: 0;
+}
